@@ -1,0 +1,69 @@
+/* Custom styles for professional, industrial look */
+        :root {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* Light Gray / bg-gray-50 for soft light background */
+        }
+        /* Primary accent color remains Industrial Red/Orange (#F05252) */
+        .text-primary { color: #F05252; }
+        .bg-primary { background-color: #F05252; }
+        .border-primary { border-color: #F05252; }
+
+        /* Animation class for fade-in on scroll */
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Specific styles for the process flow visualization */
+        .process-step {
+            position: relative;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .process-step::before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1); /* Dark line on light background */
+            left: 10px;
+            top: 0;
+            z-index: -1;
+        }
+        .process-step:last-child::before {
+            height: 0;
+        }
+        .step-icon-container {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #F05252;
+            color: white; /* White text on red background */
+            font-weight: bold;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Responsive Hero Text Size */
+        .hero-title {
+            font-size: 2.5rem;
+        }
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+        }
